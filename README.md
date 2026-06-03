@@ -1,6 +1,6 @@
 # MBP Software Ecosystem
 
-![Ecosystem](https://ecosystem-docs/diagrams/ecosystem.svg)
+![Ecosystem](ecosystem-docs/diagrams/ecosystem.svg)
 
 Repro-LIMS is the Mouse Biology Program laboratory information management system for high-throughput mouse engineering and reproductive technology operations. It coordinates the logistics, records, production metrics, cryogenic inventory, recovery workflows, and delivery of engineered mouse models, including KOMP/IMPC production, MMRRC order fulfillment, academic requests, and related project status reporting.
 
