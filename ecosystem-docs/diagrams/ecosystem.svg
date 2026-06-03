@@ -1,0 +1,131 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Software Ecosystem</title>
+  <desc id="desc">SVG rendering of the Mermaid ecosystem flowchart showing users, integrated scientific workflow infrastructure, external system integrations, and the Figure 1 footnote.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .group-core { fill: #eef6ff; stroke: #2563eb; stroke-width: 2.4; }
+      .node { fill: #ffffff; stroke: #334155; stroke-width: 1.9; }
+      .node-user { fill: #fef3c7; stroke: #b45309; }
+      .node-core { fill: #dbeafe; stroke: #1d4ed8; }
+      .node-external { fill: #ecfdf5; stroke: #047857; }
+      .label { font-family: "Segoe UI", Calibri, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+      .label-small { font-size: 17px; font-weight: 700; }
+      .group-label { font-family: "Segoe UI", Calibri, Arial, sans-serif; font-size: 24px; font-weight: 800; fill: #1e3a8a; text-anchor: middle; dominant-baseline: middle; }
+      .caption { font-family: "Segoe UI", Calibri, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #475569; text-anchor: middle; dominant-baseline: middle; }
+      .edge { fill: none; stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .edge-bi { fill: none; stroke: #334155; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-start: url(#arrow-start); marker-end: url(#arrow); }
+      .edge-internal { stroke-width: 2.2; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="980"/>
+
+  <!-- Edges are drawn first so arrow routes never sit on top of node text. -->
+  <g id="edges">
+    <!-- User interactions -->
+    <path class="edge-bi" d="M 380 105 C 430 105, 455 205, 500 305"/>
+    <path class="edge" d="M 380 225 C 430 225, 455 320, 500 410"/>
+    <path class="edge-bi" d="M 380 366 C 430 366, 455 438, 500 515"/>
+    <path class="edge-bi" d="M 380 531 C 430 531, 455 605, 500 645"/>
+    <path class="edge-bi" d="M 380 800 C 430 800, 455 740, 500 690"/>
+
+    <!-- External integrations from the core group -->
+    <path class="edge-bi" d="M 930 230 C 995 175, 1035 85, 1090 80"/>
+    <path class="edge-bi" d="M 930 285 C 995 230, 1035 170, 1090 165"/>
+    <path class="edge-bi" d="M 930 345 C 995 292, 1035 252, 1090 250"/>
+    <path class="edge-bi" d="M 930 410 C 995 372, 1035 338, 1090 335"/>
+    <path class="edge-bi" d="M 930 485 C 995 460, 1035 432, 1090 430"/>
+    <path class="edge" d="M 930 720 C 995 765, 1035 807, 1090 810"/>
+
+    <!-- External integrations from Repro-LIMS -->
+    <path class="edge-bi" d="M 855 660 C 965 642, 1015 550, 1090 545"/>
+    <path class="edge" d="M 855 675 C 965 675, 1015 632, 1090 630"/>
+    <path class="edge" d="M 855 690 C 965 705, 1015 715, 1090 715"/>
+  </g>
+
+  <!-- Groups -->
+  <rect class="group-core" x="500" y="115" width="430" height="695" rx="18"/>
+  <text class="group-label" x="715" y="165">Integrated Scientific Workflow</text>
+  <text class="group-label" x="715" y="195">Infrastructure</text>
+
+  <!-- Users -->
+  <rect class="node node-user" x="60" y="70" width="320" height="70" rx="10"/>
+  <text class="label" x="220" y="105">Investigators</text>
+
+  <rect class="node node-user" x="60" y="190" width="320" height="70" rx="10"/>
+  <text class="label" x="220" y="225">Laboratory Operations</text>
+
+  <rect class="node node-user" x="60" y="320" width="320" height="92" rx="10"/>
+  <text class="label" x="220" y="354">Customer Service &amp;</text>
+  <text class="label" x="220" y="384">Project Management</text>
+
+  <rect class="node node-user" x="60" y="485" width="320" height="92" rx="10"/>
+  <text class="label" x="220" y="519">MMRRC / IMPC /</text>
+  <text class="label" x="220" y="549">MBP Programs</text>
+
+  <rect class="node node-user" x="60" y="765" width="320" height="70" rx="10"/>
+  <text class="label" x="220" y="800">YouTrack Ticketing System</text>
+
+  <!-- Core systems -->
+  <rect class="node node-core" x="595" y="237" width="260" height="90" rx="10"/>
+  <text class="label" x="725" y="269">MMPC-Live</text>
+  <text class="label label-small" x="725" y="299">Metabolic Phenotyping</text>
+
+  <rect class="node node-core" x="595" y="395" width="260" height="90" rx="10"/>
+  <text class="label" x="725" y="427">Pheno-LIMS</text>
+  <text class="label label-small" x="725" y="457">Phenotyping</text>
+
+  <rect class="node node-core" x="595" y="510" width="260" height="90" rx="10"/>
+  <text class="label" x="725" y="542">Geno-LIMS</text>
+  <text class="label label-small" x="725" y="572">Genotyping</text>
+
+  <rect class="node node-core" x="595" y="625" width="260" height="90" rx="10"/>
+  <text class="label" x="725" y="657">Repro-LIMS</text>
+  <text class="label label-small" x="725" y="687">In Vivo Engineering &amp; RT</text>
+
+  <!-- Internal core interactions are drawn above the core nodes so arrowheads remain visible. -->
+  <g id="core-interactions">
+    <path class="edge-bi edge-internal" d="M 725 327 L 725 395"/>
+    <path class="edge-bi edge-internal" d="M 725 485 L 725 510"/>
+    <path class="edge-bi edge-internal" d="M 725 600 L 725 625"/>
+    <path class="edge-bi edge-internal" d="M 855 670 C 940 620, 940 440, 855 440"/>
+  </g>
+
+  <!-- External systems -->
+  <rect class="node node-external" x="1090" y="45" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="80">MMPC-Live Orders</text>
+
+  <rect class="node node-external" x="1090" y="130" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="165">Mosaic Vivarium System</text>
+
+  <rect class="node node-external" x="1090" y="215" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="250">MMRRC Order Tracking</text>
+
+  <rect class="node node-external" x="1090" y="300" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="335">Project Tracking System</text>
+
+  <rect class="node node-external" x="1090" y="385" width="360" height="90" rx="10"/>
+  <text class="label" x="1270" y="418">IMPC / External Data</text>
+  <text class="label" x="1270" y="448">Resources</text>
+
+  <rect class="node node-external" x="1090" y="510" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="545">MGI</text>
+
+  <rect class="node node-external" x="1090" y="595" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="630">MMRRC Repository</text>
+
+  <rect class="node node-external" x="1090" y="680" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="715">Cryogenic Inventory</text>
+
+  <rect class="node node-external" x="1090" y="775" width="360" height="70" rx="10"/>
+  <text class="label" x="1270" y="810">Publications &amp; Reporting</text>
+
+  <text class="caption" x="800" y="930">Figure 1.</text>
+</svg>

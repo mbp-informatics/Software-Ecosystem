@@ -1,6 +1,13 @@
 
-%%{init: {"flowchart": {"nodeSpacing": 16, "rankSpacing": 32}} }%%
-flowchart LR
+---
+title: Software Ecosystem
+---
+
+%%{init: {"flowchart": {"nodeSpacing": 34, "rankSpacing": 44}, "themeCSS": ".nodeLabel, .edgeLabel, .cluster-label { font-size: 20px !important; font-weight: 700 !important; }"}} }%%
+flowchart TB
+
+subgraph Diagram[" "]
+    direction LR
 
 %% Users
     Investigators[Investigators]
@@ -10,17 +17,18 @@ flowchart LR
     YouTrack[YouTrack Ticketing System]
 
 %% Core systems
-    subgraph Core["Integrated MBP Scientific Workflow Infrastructure"]
+    subgraph Core["Integrated Scientific Workflow Infrastructure"]
         direction TB
+        MMPCLive[MMPC-Live\nMetabolic Phenotyping]
         Pheno[Pheno-LIMS\nPhenotyping]
         Geno[Geno-LIMS\nGenotyping]
-        Repro[Repro-LIMS\nMouse Engineering & RT]
+        Repro[Repro-LIMS\nIn Vivo Engineering & RT]
     end
 
 %% External systems
     subgraph External[" "]
         direction TB
-        MMPCOrders[MMPC Order Tracking]
+        MMPCOrders[MMPC-Live Orders]
         Mosaic[Mosaic Vivarium System]
         OTS[MMRRC Order Tracking]
         PTS[Project Tracking System]
@@ -32,13 +40,14 @@ flowchart LR
     end
 
 %% User interactions
-    Investigators --> Core
+    Investigators <--> Core
     Operations --> Core
-    CustomerService --> Core
-    Consortium --> Core
+    CustomerService <--> Core
+    Consortium <--> Core
     YouTrack <--> Core
 
 %% Internal interactions
+    MMPCLive <--> Pheno
     Pheno <--> Geno
     Geno <--> Repro
     Repro <--> Pheno
@@ -55,3 +64,9 @@ flowchart LR
     Core --> Publications
 
     style External fill:none,stroke:none
+end
+
+Diagram ~~~ Footnote["Figure 1."]
+
+style Diagram fill:none,stroke:none
+style Footnote fill:none,stroke:none
